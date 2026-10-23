@@ -1,0 +1,126 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 在 src/assets/base.css 底部追加 --- */
+
+:root {
+  /* 高级感色板 (Muted Luxury Palette) */
+  --vton-bg: #faf9f6; /* 柔和的羊皮纸白，减少屏幕刺眼感 */
+  --vton-surface: #ffffff; /* 卡片表层纯白 */
+  --vton-surface-alt: #f5f5f7; /* 次级表层（如未上传状态的底色） */
+
+  --vton-text-main: #2c2c2e; /* 木炭灰，代替纯黑 */
+  --vton-text-sub: #8e8e93; /* 雅致的浅灰色 */
+
+  --vton-accent-primary: #3a4750; /* 深蓝灰，作为主要交互颜色 */
+  --vton-accent-gold: #c19a6b; /* 哑光金/驼色，用作画龙点睛的强调色 */
+
+  --vton-border: #e5e5e7; /* 极细极淡的边框色 */
+
+  /* 字体系统 (如果未安装可自动回退) */
+  --vton-font-title: 'Playfair Display', 'Times New Roman', serif;
+  --vton-font-body: 'Inter', -apple-system, sans-serif;
+
+  /* 阴影与圆角 */
+  --vton-radius-sm: 8px;
+  --vton-radius-lg: 16px;
+  --vton-shadow-float: 0 8px 24px rgba(0, 0, 0, 0.04);
+  --vton-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* 丝滑的贝塞尔曲线 */
+}
+
+/* 覆盖 Element Plus 的一些默认蓝色，让其贴合我们的主题 */
+:root {
+  --el-color-primary: var(--vton-accent-primary) !important;
+  --el-color-primary-light-3: #5c6870 !important;
+  --el-color-primary-light-9: #f0f2f5 !important;
+}
+
+body {
+  background-color: var(--vton-bg);
+  color: var(--vton-text-main);
+  font-family: var(--vton-font-body);
+}
